@@ -1,8 +1,12 @@
 import React from 'react'
+import { PaginationContainer, PaginationButton } from '../styles/Pagination.styles';
 
 function Pagination() {
   return (
-    <div>Pagination</div>
+    <PaginationContainer>
+    <PaginationButton>Prev</PaginationButton>
+    <PaginationButton>Next</PaginationButton>
+  </PaginationContainer>
   )
 }
 

@@ -1,8 +1,14 @@
 import React from 'react'
+import { SearchContainer, SearchInput } from '../styles/Search.styles'
 
 function Search() {
   return (
-    <div>Search</div>
+    <SearchContainer>
+    <SearchInput 
+      type="text" 
+      placeholder="Search for stories..."
+    />
+  </SearchContainer>
   )
 }
 

@@ -1,5 +1,11 @@
 import React from 'react'
 import { useGlobalContext } from '../../context'
+import {
+    StoriesContainer,
+    StoryCard,
+    StoryInfo,
+    StoryLinks
+  } from '../styles/Stories.styles'
 
 
 function Stories() {
@@ -13,24 +19,24 @@ function Stories() {
     }
     
   return (
-    <>
+    <StoriesContainer>
     <h2>Tech News Posts</h2>
     {hits.map((curPost, index)=>{
         const {title, author, objectID, url, num_comments} = curPost;
         return(
-            <div key={index}>
+            <StoryCard key={index}>
                 <h2>{curPost.title}</h2>
-                <p>
+                <StoryInfo>
                     By <span>{author}</span> | <span>{num_comments} comments</span>
-                </p>
-                <div>
+                </StoryInfo>
+                <StoryLinks>
                     <a href={url} target='_blank'> Read More </a>
                     <a href='#'>Remove</a>
-                </div>
-            </div>
+                </StoryLinks>
+            </StoryCard>
         )
     })}
-    </>
+   </StoriesContainer>
   )
 }
 
