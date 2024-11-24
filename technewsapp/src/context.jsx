@@ -41,14 +41,22 @@ const AppProvider = ({children}) =>{
     const searchPost = (searchQuery) => {
         dispatch({type: "SEARCH_QUERY", payload: searchQuery})
     }
+    //Pagination
+    const getPrePage = () => {
+        dispatch({type: "PREV_PAGE"})
+    }
+
+    const getNextPage = () =>{
+        dispatch({type: "NEXT_PAGE"})
+    }
 
     //Fetch API
 
     useEffect(() => {
     fetchApiData(`${API}query=${state.query}&page=${state.page}`);   
-    }, [state.query])
+    }, [state.query, state.page])
     return(
-            <AppContext.Provider value={{ ...state, removePost, searchPost }}>
+            <AppContext.Provider value={{ ...state, removePost, searchPost, getPrePage, getNextPage }}>
                 {children}
             </AppContext.Provider>
     )
