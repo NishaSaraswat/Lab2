@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGlobalContext } from '../../context'
+import { useGlobalContext } from '../../context/NewsContext'
 import { PaginationContainer, PaginationButton } from '../styles/Pagination.styles';
 
 

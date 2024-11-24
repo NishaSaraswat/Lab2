@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchContainer, SearchInput } from '../styles/Search.styles'
-import { useGlobalContext } from '../../context'
+import { useGlobalContext } from '../../context/NewsContext'
 
 function Search() {
   const {query, searchPost} = useGlobalContext();

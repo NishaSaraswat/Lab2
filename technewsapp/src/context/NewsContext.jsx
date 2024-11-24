@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useEffect }from "react";
-import reducer from "./reducer";
+import reducer from "../reducer/reducer";
 
 let API = "http://hn.algolia.com/api/v1/search?"
 const initialState = {
