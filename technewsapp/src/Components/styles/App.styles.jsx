@@ -7,4 +7,5 @@ export const AppContainer = styled.div`
   text-align: center;
   background-color: #f5f5f5;
   min-height: 100vh;
+  font-family: "Poppines", sans-serif;
 `;

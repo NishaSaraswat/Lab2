@@ -29,6 +29,11 @@ export const StoryInfo = styled.p`
 
 export const StoryLinks = styled.div`
   margin-top: 1rem;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   
   a {
     margin-right: 1rem;
@@ -36,10 +41,19 @@ export const StoryLinks = styled.div`
     background-color: #eeeeee;
     text-decoration: none;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px 10px;
     
     &:hover {
-      color: #A020F0;
+      background-color: #48A860;
+      color: #ffffff;
     }
   }
+    a:last-child{
+    color:red;
+
+    &:hover {
+      background-color: #ff0000;
+      color: #ffffff;
+    }
+    }
 `;

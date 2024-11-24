@@ -10,7 +10,7 @@ import {
 
 function Stories() {
  
-    const {hits, isLoading} = useGlobalContext();
+    const {hits, isLoading, removePost} = useGlobalContext();
 
     if(isLoading){
         return(
@@ -24,14 +24,14 @@ function Stories() {
     {hits.map((curPost, index)=>{
         const {title, author, objectID, url, num_comments} = curPost;
         return(
-            <StoryCard key={index}>
-                <h2>{curPost.title}</h2>
+            <StoryCard key={objectID}>
+                <h2>{title}</h2>
                 <StoryInfo>
-                    By <span>{author}</span> | <span>{num_comments} comments</span>
+                    By <span>{author}</span> | <span>{num_comments} </span>comments
                 </StoryInfo>
                 <StoryLinks>
                     <a href={url} target='_blank'> Read More </a>
-                    <a href='#'>Remove</a>
+                    <a href='#' onClick={()=>removePost(objectID)}>Remove</a>
                 </StoryLinks>
             </StoryCard>
         )

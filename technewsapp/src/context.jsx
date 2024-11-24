@@ -19,7 +19,7 @@ const AppProvider = ({children}) =>{
         try {
             const res = await fetch(url);
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
             dispatch({
                 type: "GET_STORIES",
                 payload: {
@@ -31,15 +31,24 @@ const AppProvider = ({children}) =>{
             console.log(error)
         }
     }
+    //To Remove the post
 
+    const removePost = (post_id) => {
+        dispatch({type: "REMOVE_POST", payload: post_id})
+    }
+
+    //search
+    const searchPost = (searchQuery) => {
+        dispatch({type: "SEARCH_QUERY", payload: searchQuery})
+    }
+
+    //Fetch API
 
     useEffect(() => {
-      
-    fetchApiData(`${API}query=${state.query}&page=${state.page}`);
-      
-    }, [])
+    fetchApiData(`${API}query=${state.query}&page=${state.page}`);   
+    }, [state.query])
     return(
-            <AppContext.Provider value={{ ...state }}>
+            <AppContext.Provider value={{ ...state, removePost, searchPost }}>
                 {children}
             </AppContext.Provider>
     )
